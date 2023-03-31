@@ -1,11 +1,13 @@
 import 'dart:developer';
 import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-
+import './home.dart';
 FirebaseAuth auth = FirebaseAuth.instance;
+
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -29,13 +31,13 @@ class _LoginState extends State<Login> {
         body: SafeArea(
       child: Column(
         children: [
-          TextFormField(
+          TextFormField(controller: email,
             decoration: InputDecoration(hintText: 'email'),
           ),
           SizedBox(
             height: 20,
           ),
-          TextFormField(
+          TextFormField(controller: password,
             decoration: InputDecoration(hintText: 'password'),
           ),
           SizedBox(
@@ -44,9 +46,22 @@ class _LoginState extends State<Login> {
           TextButton(
               onPressed: () {
                 auth
-                    .signInWithEmailAndPassword(
+                    .createUserWithEmailAndPassword(
                         email: email.text, password: password.text)
-                    .then((value) async {});
+                    .then((value) async {
+
+                  await firestore
+                      .collection('users')
+                      .doc(auth.currentUser!.uid)
+                      .set({
+                    'name':auth.currentUser!.photoURL,
+                    'email':auth.currentUser!.email,
+                    'status':'Not Available'
+
+                  });
+                  Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>Home1()));
+                  print('success');
+                });
               },
               child: Text('Login'))
         ],
