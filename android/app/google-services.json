@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "567513573783",
+    "project_id": "basechatapp-44a08",
+    "storage_bucket": "basechatapp-44a08.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:567513573783:android:3bc2c0746c8c9e174c7cd2",
+        "android_client_info": {
+          "package_name": "com.example.basechatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "567513573783-hgm42c5q36346gsaf8u28muhcv71mbl6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1awUbFF7s2wBt3-exguq69FRe8RVJgIE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "567513573783-hgm42c5q36346gsaf8u28muhcv71mbl6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
