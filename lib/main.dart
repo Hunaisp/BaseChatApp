@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-import 'loginPage.dart';
+import 'signup.dart';
 
 
 void main()async {
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: Login(),
+      home: Signup(),
     );
   }
 }
